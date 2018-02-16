@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <link href="build/css/vendor.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <title>Better Doctor</title>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <h3>Enter a symptom or illness you are experiencing below to see if there are any doctors around for it: </h3>
+      <form id="condition-form">
+        <label for="condition">Condition / Symptom</label>
+        <input id="condition" value="foot" type="text">
+        <!-- <label for="limit">Search Limit Size</label>
+        <input id="limit" value="20" type="number"> -->
+        <button type="submit">Submit form</button>
+      </form>
+      <p id="result"></p>
+  </body>
+</html>
