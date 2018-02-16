@@ -11,9 +11,11 @@
   </head>
   <body>
     <h1>Welcome</h1>
-    <h3>Enter a symptom or illness you are experiencing below to see if there are any doctors around for it: </h3>
+    <div class="instructions">
+      <h5>Enter a symptom or illness you are experiencing below to see if there are any doctors around for it: </h5>
+    </div>
       <form id="condition-form">
-        <label for="condition">Condition / Symptom</label>
+        <label for="condition">Condition / Symptom: </label>
         <input id="condition" value="foot" type="text">
         <!-- <label for="limit">Search Limit Size</label>
         <input id="limit" value="20" type="number"> -->
@@ -23,7 +25,7 @@
       <p class="showErrors"></p>
 
       <form id="doctor-form">
-        <label for="last-name">Doctor's Last Name</label>
+        <label for="last-name">Doctor's Last Name: </label>
         <input id="last-name" value="Squires" type="text">
         <!-- <label for="limit">Search Limit Size</label>
         <input id="limit" value="20" type="number"> -->

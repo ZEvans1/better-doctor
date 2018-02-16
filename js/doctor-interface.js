@@ -11,6 +11,8 @@ $(document).ready(function() {
     let condition = $('#condition').val();
     let newSearch = promise(condition);
     $('#result').empty();
+    $('#doctor-info').empty();
+    $('#doctor-form').show();
 
     newSearch.then(function(response) {
 
@@ -45,7 +47,7 @@ $(document).ready(function() {
           } else {
             acceptsPatients = "no";
           }
-          $('#doctor-info').append(body.data[i].profile.last_name + ", " + body.data[i].profile.first_name + ", " + body.data[i].profile.title + "<br>" + '<img src =' + body.data[i].profile.image_url + '>' + "<br>");
+          $('#doctor-info').append("<div class='card' >" + body.data[i].profile.last_name + ", " + body.data[i].profile.first_name + ", " + body.data[i].profile.title + "<br>" + '<img src =' + body.data[i].profile.image_url + '>' + "<br>" + "</div>");
           $('#doctor-info').append("Visiting address: " + body.data[i].practices[0].visit_address.street + ", " + body.data[i].practices[0].visit_address.state + ", " + body.data[i].practices[0].visit_address.zip + "<br>" + "Accepting new patients: " + acceptsPatients + "<br>" + "<br>");
           for (let j = 0; j < body.data[i].practices[0].phones.length; j++) {
             $('#doctor-info').append("Phone #: " + body.data[i].practices[0].phones[j].number + "<br>" + "Type : " + body.data[i].practices[0].phones[j].type + "<br>" + "<br>");
