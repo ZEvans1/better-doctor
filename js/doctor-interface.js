@@ -33,7 +33,11 @@ $(document).ready(function() {
 
       let body = JSON.parse(response);
         for (let i = 0; i < body.data.length; i++) {
-          $('#doctor-info').append(body.data[i].profile.last_name + ", " + body.data[i].profile.first_name + ", " + body.data[i].profile.title + "<br>");
+          $('#doctor-info').append(body.data[i].profile.last_name + ", " + body.data[i].profile.first_name + ", " + body.data[i].profile.title + "<br>" + '<img src =' + body.data[i].profile.image_url + '>' + "<br>");
+          $('#doctor-info').append("Visiting address: " + body.data[i].practices[0].visit_address.street + ", " + body.data[i].practices[0].visit_address.state + ", " + body.data[i].practices[0].visit_address.zip + "<br>");
+          for (let j = 0; j < body.data[i].practices[0].phones.length; j++) {
+            $('#doctor-info').append("Phone #: " + body.data[i].practices[0].phones[j].number + "<br>" + "Type : " + body.data[i].practices[0].phones[j].type + "<br>" + "<br>");
+          }
         }
     }, function(error) {
       $('.showErrors').text(`There was an error: $(error.message)`);
