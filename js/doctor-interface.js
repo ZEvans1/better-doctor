@@ -12,13 +12,14 @@ $(document).ready(function() {
     let newSearch = promise(condition);
     $('#result').empty();
     $('#doctor-info').empty();
+    $('.instructions-two').show();
     $('#doctor-form').show();
 
     newSearch.then(function(response) {
 
       let body = JSON.parse(response);
       if (body.data.length < 1) {
-        $('#result').text("No doctors found for your search term. Please try another term.")
+        $('#result').text("No doctors found for your search term. Please try another term.");
       }
         for (let i = 0; i < body.data.length; i++) {
           $('#result').append(body.data[i].profile.first_name + " " + body.data[i].profile.last_name + ", " + body.data[i].profile.title + "<br>");
@@ -38,7 +39,7 @@ $(document).ready(function() {
 
       let body = JSON.parse(response);
       if (body.data.length < 1) {
-        $('#doctor-info').text("No doctors found for your search term. Please make sure you entered the last name you saw above correctly.")
+        $('#doctor-info').text("No doctors found. Please make sure you entered a last name you saw above correctly.");
       }
         for (let i = 0; i < body.data.length; i++) {
           let acceptsPatients;
@@ -47,7 +48,15 @@ $(document).ready(function() {
           } else {
             acceptsPatients = "no";
           }
+
           $('#doctor-info').append("<div class='card' >" + body.data[i].profile.last_name + ", " + body.data[i].profile.first_name + ", " + body.data[i].profile.title + "<br>" + '<img src =' + body.data[i].profile.image_url + '>' + "<br>" + "</div>");
+
+          if (body.data[i].practices[0].website === undefined) {
+            $('#doctor-info').append("No website found." + "<br>");
+          } else {
+            $('#doctor-info').append("Website: " + body.data[i].practices[0].website + "<br>");
+          }
+
           $('#doctor-info').append("Visiting address: " + body.data[i].practices[0].visit_address.street + ", " + body.data[i].practices[0].visit_address.state + ", " + body.data[i].practices[0].visit_address.zip + "<br>" + "Accepting new patients: " + acceptsPatients + "<br>" + "<br>");
           for (let j = 0; j < body.data[i].practices[0].phones.length; j++) {
             $('#doctor-info').append("Phone #: " + body.data[i].practices[0].phones[j].number + "<br>" + "Type : " + body.data[i].practices[0].phones[j].type + "<br>" + "<br>");

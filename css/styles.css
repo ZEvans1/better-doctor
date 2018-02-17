@@ -26,6 +26,12 @@ p {
 
 }
 
+.instructions-two {
+  width: 400px;
+  display: none;
+
+}
+
 .card {
   display: block;
   border: 3px solid black;

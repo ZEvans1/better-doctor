@@ -1,22 +1,23 @@
 # _Better Doctor Api_
 
-#### _A page for using the Better Doctor API for JavaScript week 2 @ Epicodus, Feb. 16, 2018_
+#### _A page for using the BetterDoctor API for JavaScript week 2 @ Epicodus, Feb. 16, 2018_
 
 #### By _**Zach Evans**_
 
 ## Description
 
-_This is an HTML page that uses JavaScript to determine a user's  ... . Is determined by requesting a user's ... ._
+_This is an HTML page that uses JavaScript to find doctors in a user's area (Portland for now) that could treat a user's illness / symptoms. The user enters a symptom or illness, a list of doctors appears, and then the user can enter one of the doctors' names to find more details about them._
 
 ## Future Work
 
-
+_Show a doctor's location on a map using something like Google Maps API._
+_Sort results (rating, proximity, etc)._
 
 ### Specs
 | Behavior | Input | Output |
 | :-------------     | :------------- | :-------------
-| **Converts a number (year to seconds)** | 1 | 31536000 |
-| **Determines the difference of two numbers** | [3, 2] | 1 |
+| **Entering a symptom/condition returns a list of doctor names** | Rash | [John, Jane] |
+| **Entering a name returns details** | John | ["John", "Doe", true, "website", "phone#", "address"] |
 
 
 ## Setup/Installation Requirements
@@ -49,6 +50,7 @@ _Contact email: zte.zachary@gmail.com_
 * _gulp_
 * _jasmine_
 * _karma_
+* _BetterDoctor API__
 
 
 ### License
