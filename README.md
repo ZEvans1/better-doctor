@@ -24,13 +24,13 @@ _Sort results (rating, proximity, etc)._
 
 * _This project can be accessed [here](https://github.com/ZEvans1/better-doctor.git)_
 * _Clone the repository to your machine_
+* _Create a .env file in the top level of this directory_
+* _Request an API key from BetterDoctor and put it in the .env file as shown below:_
+*      exports.apiKey = "your API key from BetterDoctor goes here";
 * _Run the following commands:_
 * _npm install_
 * _bower install_
 * _gulp build_
-* _Create a .env file in the top level of this directory_
-* _Request an API key from BetterDoctor and put it in the .env file as shown below:_
-*      exports.apiKey = "your API key from BetterDoctor goes here";
 * _Open in a web browser (was made with Chrome)_
 
 ## Known Bugs
